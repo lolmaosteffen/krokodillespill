@@ -29,14 +29,16 @@ function submitKnapp() {
         document.getElementById("poengtavla").innerHTML = +currentScore.innerHTML + 1;
     }
     else document.getElementById("poengtavla").innerHTML = +currentScore.innerHTML - 1;
-    // document.getElementById("inputfield").value = '';
+    document.getElementById("inputfield").value = '';
     // if (userInput === '') {
     //     document.getElementById("poengtavla").innerHTML = +currentScore.innerHTML + 1;
     //     document.getElementById("poengtavla").innerHTML = currentScore.innerHTML - 1;
     // }
+    document.getElementById("cunt").innerHTML = `<button onclick="">submit</button>`;
 }
 function resetKnapp() {
     randomTallEn()
     randomTallTo()
     document.getElementById("inputfield").value = '';
+    document.getElementById("cunt").innerHTML = `<button onclick="submitKnapp()">submit</button>`;
 }
