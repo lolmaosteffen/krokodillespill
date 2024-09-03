@@ -1,21 +1,30 @@
+const inputfelt = document.getElementById("inputfield");
+const points = document.getElementById("poengtavla");
+const nmb1 = document.getElementById("randomtall1");
+const nmb2 = document.getElementById("randomtall2");
+const submitButton = document.getElementById("cunt");
+
+
+
+
 let tall1, tall2;
 randomTallEn()
 randomTallTo()
 function randomTallEn() {
     tall1 = Math.floor(Math.random() * 10) + 1;
-    document.getElementById("randomtall1").innerHTML = tall1;
+    nmb1.innerHTML = tall1;
     // return tall1;
 }
 function randomTallTo() {
     tall2 = Math.floor(Math.random() * 10) + 1;
-    document.getElementById("randomtall2").innerHTML = tall2;
+    nmb2.innerHTML = tall2;
     // return tall2;
 }
 function submitKnapp() {
     // let tallEn = randomTallEn;
     // let tallTo = randomTallTo;
-    let userInput = document.getElementById("inputfield").value;
-    let currentScore = document.getElementById("poengtavla");
+    let userInput = inputfelt.value;
+    let currentScore = points;
     let riktigSvar;
     if (tall1 > tall2) {
         riktigSvar = '>';
@@ -26,19 +35,15 @@ function submitKnapp() {
     else riktigSvar = '=';
 
     if (userInput === riktigSvar) {
-        document.getElementById("poengtavla").innerHTML = +currentScore.innerHTML + 1;
+        points.innerHTML = +currentScore.innerHTML + 1;
     }
-    else document.getElementById("poengtavla").innerHTML = +currentScore.innerHTML - 1;
-    document.getElementById("inputfield").value = '';
-    // if (userInput === '') {
-    //     document.getElementById("poengtavla").innerHTML = +currentScore.innerHTML + 1;
-    //     document.getElementById("poengtavla").innerHTML = currentScore.innerHTML - 1;
-    // }
-    document.getElementById("cunt").innerHTML = `<button onclick="">submit</button>`;
+    else points.innerHTML = +currentScore.innerHTML - 1;
+    points.value = '';
+    submitButton.innerHTML = `<button onclick="">submit</button>`;
 }
 function resetKnapp() {
     randomTallEn()
     randomTallTo()
-    document.getElementById("inputfield").value = '';
-    document.getElementById("cunt").innerHTML = `<button onclick="submitKnapp()">submit</button>`;
+    inputfelt.value = '';
+    submitButton.innerHTML = `<button onclick="submitKnapp()">submit</button>`;
 }
