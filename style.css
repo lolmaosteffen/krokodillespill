@@ -23,14 +23,11 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Optional: Adds space between elements */
 }
 
 .number {
     font-size: 20px;
-    /* Adjust size as needed */
     padding: 5px;
-    /* Adds padding around the numbers */
 }
 
 #inputfield {
@@ -41,7 +38,6 @@ body {
 
 button {
     margin-top: 10px;
-    /* Adds space above the buttons */
     font-size: 16px;
     padding: 10px 20px;
 }
